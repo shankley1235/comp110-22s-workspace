@@ -32,4 +32,7 @@ if user_character == user_word[4]:
 if number_of_matching_chr == 0:
     print("No instances of " + user_character + " found in " + user_word)
 else:
-    print(str(number_of_matching_chr) + " instances of " + user_character + " found in " + user_word)
+    if number_of_matching_chr == 1:
+        print(str(number_of_matching_chr) + " instance of " + user_character + " found in " + user_word)
+    else:
+        print(str(number_of_matching_chr) + " instances of " + user_character + " found in " + user_word)
