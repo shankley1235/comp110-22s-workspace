@@ -41,3 +41,25 @@ def input_guess(expected_guess_length: int) -> str:
     while len(guess) != expected_guess_length:
         guess = input(f"That wasn't {expected_guess_length} chars! Try again: ")
     return guess
+
+
+def main() -> None:
+    """The entrypoint of the program and main game loop."""
+    SECRET: str = "codes"
+    turns: int = 1
+    while turns <= 6:
+        print(f"=== Turn {turns}/6 ===")
+        guess: str = input_guess(len(SECRET))
+        if guess != SECRET:
+            print(emojified(guess, SECRET))
+        else:
+            print(emojified(guess, SECRET))
+            print(f"You won in {turns}/6 turns!")
+            return
+        turns += 1  
+    print("X/6 - Sorry, try again tomorrow!")
+    return
+
+
+if __name__ == "__main__":
+    main()
