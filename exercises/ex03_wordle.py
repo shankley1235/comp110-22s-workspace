@@ -1,6 +1,6 @@
 """Totally original wordle game."""
 
-__author__ = 730435749
+__author__ = "730435749"
 
 
 def contains_char(string_searched: str, character_searched: str) -> bool:
