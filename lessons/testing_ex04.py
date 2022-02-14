@@ -118,12 +118,14 @@ draw_sun(sunshine, 500, 150, 200)
 
 
 def random_color_fish(x_turtle: Turtle) -> None:
-    if randint(1, 3) == 1:
+    if randint(1, 4) == 1:
         x_turtle.color(255, 255, 77)
-    elif randint(1, 3) == 2:
+    elif randint(1, 4) == 2:
         x_turtle.color(128, 0, 0)
-    else:
+    elif randint(1, 4) == 3:
         x_turtle.color(255, 0, 255)
+    else:
+        x_turtle.color("green")
 
 
 def draw_fishy(x_turtle: Turtle, x: float, y: float, radius: float) -> None:
@@ -158,5 +160,47 @@ draw_fishy(fishy, -450, -150, randint(20, 50))
 draw_fishy(fishy, 450, -150, randint(20, 50))
 draw_fishy(fishy, -20, -330, randint(20, 50))
 draw_fishy(fishy, 600, -300, randint(20, 50))
+
+
+def draw_cloud(a_turtle: Turtle, x: float, y: float, size: str) -> None:
+    a_turtle.speed(0)
+    a_turtle.hideturtle()
+    a_turtle.color("white")
+    a_turtle.penup()
+    a_turtle.goto(x, y)
+    a_turtle.pendown()
+    n: int = 0
+    if size == "small":
+        n = 2
+    if size == "medium":
+        n = 3
+    if size == "large":
+        n = 4
+    i: int = 0
+    while i < n:
+        a_turtle.begin_fill()
+        draw_circle(a_turtle, 40, 360)
+        a_turtle.end_fill()
+        a_turtle.setheading(0)
+        a_turtle.forward(70)
+        i += 1
+    a_turtle.penup()
+    a_turtle.goto(x + 40, y - 40)
+    i = 0
+    a_turtle.pendown()
+    while i < n - 1:
+        a_turtle.begin_fill()
+        a_turtle.setheading(-90)
+        a_turtle.circle(40, 360)
+        a_turtle.end_fill()
+        a_turtle.setheading(0)
+        a_turtle.forward(70)
+        i += 1
+
+
+cloud: Turtle = Turtle()
+draw_cloud(cloud, -460, 300, "large")
+draw_cloud(cloud, 0, 300, "medium")
+draw_cloud(cloud, -700, 350, "small")
 
 done()
