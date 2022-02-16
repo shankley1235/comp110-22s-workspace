@@ -1,4 +1,8 @@
-"""A Day and Night at the Ocean."""
+"""A Day or Night at the Ocean."""
+
+from turtle import Turtle, colormode, done
+from random import randint
+colormode(255)
 
 """Break up complex functions (5 points total):"""
 """Lines: 58 - 69."""
@@ -8,13 +12,7 @@
 """Lines: 99 - 117."""
 """I drew a lot of contiunous, stars with a slight rotation as well as a randomized side length color to give the impression of a sun with rays of light."""
 
-
-_author__ = "730435749"
-
-
-from turtle import Turtle, colormode, done
-from random import randint
-colormode(255)
+__author__ = "730435749"
 
 
 def turtle_settings(a_turtle: Turtle, x: float, y: float) -> None:
